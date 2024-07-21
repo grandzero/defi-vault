@@ -386,10 +386,6 @@ describe("DefiVault", function () {
         deployDefiVault
       );
 
-      //   const amountInAVAX = await ethers.provider.getBalance(
-      //     defiVault.getAddress()
-      //   );
-
       const amountInAVAX = ethers.parseEther("10");
 
       const bestPath = await findBestPath(
@@ -397,16 +393,6 @@ describe("DefiVault", function () {
         WAVAX.getAddress(),
         sAVAXAddress
       );
-      //   console.log("bestPath", bestPath);
-      //   await defiVault
-      //     .connect(addr1)
-      //     .swapWithYak(bestPath.path, bestPath.amounts, bestPath.adapters, true, {
-      //       value: ethers.parseEther("10"),
-      //     });
-
-      //   await defiVault.connect(addr1).depositToBenqi();
-
-      //   await defiVault.connect(addr1).borrowFromBenqi();
 
       await defiVault.connect(addr1).mintFromStableJack(
         bestPath.path,
